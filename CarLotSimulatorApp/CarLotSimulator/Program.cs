@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace CarLotSimulator
 {
@@ -6,17 +8,52 @@ namespace CarLotSimulator
     {
         static void Main(string[] args)
         {
-            //TODO
+            
 
-            //Create a seperate class file called Car
-            //Car shall have the following properties: Year, Make, Model, EngineNoise, HonkNoise, IsDriveable
-            //Car shall have the following methods: MakeEngineNoise(), MakeHonkNoise()
-            //The methods should take one string parameter: the respective noise property
-
+            var lot = new CarLot();
+            
 
             //Now that the Car class is created we can instanciate 3 new cars
             //Set the properties for each of the cars
             //Call each of the methods for each car
+            var civic = new Car();
+            
+                civic.Year = 2013;
+                civic.Make = "Honda";
+                civic.Model = "Civic";
+                civic.IsDriveable = true;
+                civic.EngineNoise = "Vreeewwwm";
+                civic.HonkNoise = "beep";
+
+            lot.Cars.Add(civic);
+
+            
+
+            var ridge = new Car();
+            
+                ridge.Year = 2011;
+                ridge.Make = "Honda";
+                ridge.Model = "Ridgeline";
+                ridge.IsDriveable = true;
+                ridge.EngineNoise = "VRAAAAM";
+                ridge.HonkNoise = "BEEEP!";
+
+            lot.Cars.Add(ridge);
+
+            var camaro = new Car();
+            camaro.Year = 1968;
+            camaro.Make = "Chevy";
+            camaro.Model = "Camaro";
+            camaro.IsDriveable = false;
+            camaro.EngineNoise = "BRRRAPPPP";
+            camaro.HonkNoise = "Beaaaap";
+            lot.Cars.Add(camaro);
+
+            Console.WriteLine(camaro.Year);
+            Console.WriteLine(camaro.EngineNoise);
+
+
+
 
             //*************BONUS*************//
 
@@ -24,10 +61,18 @@ namespace CarLotSimulator
 
             //*************BONUS X 2*************//
 
-            //Create a CarLot class
-            //It should have at least one property: a List of cars
+            //Create a CarLot class DONE
+            //It should have at least one property: a List of cars DONE
             //Instanciate the a Carlot at the beginning of the program and as you create a car add the car to the list.
             //At the end iterate through the list printing each of car's Year, Make, and Model to the console
+
+            foreach (var car in lot.Cars)
+            {
+                Console.WriteLine($"Year:{car.Year}, Make:{car.Make}, Model:{car.Model}");
+
+
+            }
+
         }
     }
 }

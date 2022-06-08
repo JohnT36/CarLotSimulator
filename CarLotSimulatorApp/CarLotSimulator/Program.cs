@@ -27,7 +27,7 @@ namespace CarLotSimulator
 
             lot.Cars.Add(civic);
 
-            
+            Console.WriteLine(CarLot.numberOfCars);
 
             var ridge = new Car();
             
@@ -37,7 +37,7 @@ namespace CarLotSimulator
                 ridge.IsDriveable = true;
                 ridge.EngineNoise = "VRAAAAM";
                 ridge.HonkNoise = "BEEEP!";
-
+            Console.WriteLine(CarLot.numberOfCars);
             lot.Cars.Add(ridge);
 
             var camaro = new Car();
@@ -48,9 +48,20 @@ namespace CarLotSimulator
             camaro.EngineNoise = "BRRRAPPPP";
             camaro.HonkNoise = "Beaaaap";
             lot.Cars.Add(camaro);
-
+            Console.WriteLine(CarLot.numberOfCars);
             Console.WriteLine(camaro.Year);
             Console.WriteLine(camaro.EngineNoise);
+
+            var fordT = new Car();
+            fordT.Year = 2022;
+            fordT.Make = "Ford";
+            fordT.Model = "F150";
+
+            Console.WriteLine(CarLot.numberOfCars);
+
+            var ford = new Car();
+
+            Console.WriteLine(CarLot.numberOfCars);
 
 
 
@@ -66,9 +77,9 @@ namespace CarLotSimulator
             //Instanciate the a Carlot at the beginning of the program and as you create a car add the car to the list.
             //At the end iterate through the list printing each of car's Year, Make, and Model to the console
 
-            foreach (var car in lot.Cars)
+            //foreach (var car in lot.Cars)
             {
-                Console.WriteLine($"Year:{car.Year}, Make:{car.Make}, Model:{car.Model}");
+                //Console.WriteLine($"Year:{car.Year}, Make:{car.Make}, Model:{car.Model}");
 
 
             }
